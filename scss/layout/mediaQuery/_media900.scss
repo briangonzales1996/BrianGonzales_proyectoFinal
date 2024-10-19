@@ -1,0 +1,31 @@
+/*media query del nav */
+@media screen and (max-width:900px) {
+    /* modificando el menu desplegable */
+    .menu .menu__nav-container{
+        position: absolute;
+        left: 0;
+        top: 66px;
+        background-color: $fondo-nav;
+        translate: 0 -126%;
+        transition: menu .1s linear;
+        transition-property: translate;
+        z-index: 1;
+        .menu__nav{
+            flex-direction: column;
+            gap: 0;
+            li{
+                padding: 15px 10px;
+                box-shadow: 2px 0px 1px $fontColor;
+            }
+        }
+
+    }
+    /* modificando propiedades cuando el checkbox este chequeado */
+    .menu .menu__desplegable:checked ~ .menu__nav-container{
+        display: flex;
+        translate: 0 0;
+    }
+    .menu label{
+        display: flex;
+    }
+}

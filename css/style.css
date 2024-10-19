@@ -1,0 +1,614 @@
+/*menu nav variables*/
+/*variables del main*/
+/*funciones*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*header---------------header*/
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: #610101;
+  padding: 0.5rem 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /*menu que contiene al buscador y logo*/ }
+  .menu .menu__logo-container {
+    display: flex;
+    justify-content: none;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 0;
+    /*ojo:si aplico grow al los elemntos, el flex padre no funciona el justify,pero los hijos de ese elemento si puedo aplicar justife y aling*/
+    min-width: 100px; }
+    .menu .menu__logo-container img {
+      width: 50px;
+      transition: logo 0.4s linear;
+      transition-property: width;
+      animation: logo 3s linear both infinite;
+      border-radius: 5px; }
+    .menu .menu__logo-container img:hover {
+      width: 55px; }
+    .menu .menu__logo-container input {
+      max-width: 200px;
+      min-height: 25px;
+      font-size: 1rem;
+      background-color: black;
+      color: white;
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 100px;
+      transition: buscador 0.4s linear;
+      /*primero va el nombre de la transicion*/
+      transition-property: background-color; }
+      .menu .menu__logo-container input:hover {
+        background-color: white;
+        color: black; }
+  .menu .menu__nav-container {
+    /*menu: apartado que contiene al navegador*/ }
+    .menu .menu__nav-container ul {
+      display: flex;
+      justify-content: none;
+      align-items: none;
+      gap: 2rem;
+      flex-wrap: wrap;
+      flex-direction: row;
+      list-style: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white; }
+      .menu .menu__nav-container ul li {
+        font-size: inherit;
+        padding: 8px;
+        transition: nav 0.4s linear;
+        transition-property: background-color; }
+        .menu .menu__nav-container ul li:hover {
+          background-color: rgba(0, 0, 0, 0.507); }
+        .menu .menu__nav-container ul li a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          padding: 5px;
+          border-radius: 5px; }
+  .menu .menu__desplegable {
+    /* input de tipo checkbox para mi menu desplegable en responsive*/
+    display: none; }
+  .menu label {
+    display: none;
+    font-size: 2rem; }
+
+@keyframes logo {
+  from {
+    background-color: #610101; }
+  to {
+    background-color: white; } }
+
+/*main titulo y fondo de la pagina */
+.main {
+  background-image: url(../assets/Comer-hamburguesa-puede-ser-saludable.webp);
+  background-size: cover;
+  background-position: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .main .main__presentacion {
+    min-height: 90vh;
+    background: linear-gradient(to left, transparent, black);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-left: 30px;
+    animation: aparecer 1s linear both; }
+    .main .main__presentacion h1 {
+      font-size: 3.2rem; }
+    .main .main__presentacion p {
+      font-size: 1.5rem;
+      max-width: 650px;
+      width: 90%; }
+
+@keyframes aparecer {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*main promociones seccion de productos recomendados------*/
+.producto-container {
+  background-color: black;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: none;
+  align-items: none;
+  gap: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .producto-container h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    overflow: hidden;
+    animation: letras 1s linear both; }
+  .producto-container h2 {
+    font-size: clamp(1.3rem, 1.7vw, 1.7rem);
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 0 10px;
+    font-weight: 600;
+    overflow: hidden;
+    animation: letras 1s linear both; }
+  .producto-container .producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-top: solid 2px white; }
+    .producto-container .producto:last-child {
+      border-bottom: solid 2px white; }
+    .producto-container .producto .producto__item {
+      max-width: 700px;
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 300px; }
+      .producto-container .producto .producto__item .producto__item__descripcion {
+        display: flex;
+        justify-content: none;
+        align-items: none;
+        gap: 30px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px;
+        transition: background-color 0.4s linear;
+        animation: letras 1s linear both; }
+        .producto-container .producto .producto__item .producto__item__descripcion:hover {
+          background-color: rgba(24, 24, 24, 0.578); }
+        .producto-container .producto .producto__item .producto__item__descripcion h3 {
+          font-size: 1.5rem;
+          overflow-wrap: break-word; }
+        .producto-container .producto .producto__item .producto__item__descripcion p {
+          font-size: 1.2rem; }
+        .producto-container .producto .producto__item .producto__item__descripcion a {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: white;
+          background-color: black;
+          border: solid 1px white;
+          width: fit-content;
+          padding: 10px;
+          margin: auto;
+          animation: deslice linear both;
+          animation-timeline: view();
+          animation-range-start: cover -30%;
+          animation-range-end: cover 20%;
+          transition: background-color 0.4s linear; }
+          .producto-container .producto .producto__item .producto__item__descripcion a:hover {
+            background-color: rgba(159, 158, 158, 0.642); }
+    .producto-container .producto .producto__imagen {
+      max-width: 600px;
+      height: 290px;
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 300px; }
+      .producto-container .producto .producto__imagen .producto__imagen-container {
+        width: 100%;
+        height: 100%; }
+        .producto-container .producto .producto__imagen .producto__imagen-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+
+@keyframes letras {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*Seccion de lista de menus disponibles*/
+.lista {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 2rem 0;
+  color: white;
+  min-height: 90vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  animation: aparecer 1s -.7s linear both; }
+  .lista h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    border-bottom: 2px solid white;
+    padding-bottom: 30px; }
+  .lista .lista__comida-rapida {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+    gap: 2rem; }
+    .lista .lista__comida-rapida .lista__comida-rapida__item {
+      max-width: 100%;
+      width: 200px;
+      min-height: 200px;
+      animation: lista linear both;
+      animation-timeline: view();
+      animation-range-start: cover -10%;
+      animation-range-end: cover 30%;
+      transition: border .3s linear; }
+      .lista .lista__comida-rapida .lista__comida-rapida__item:hover {
+        border: 2px solid white;
+        color: white; }
+      .lista .lista__comida-rapida .lista__comida-rapida__item img {
+        width: 97%;
+        height: 140px;
+        transition: imagen .3s linear;
+        transition-property: width,opacity,height; }
+      .lista .lista__comida-rapida .lista__comida-rapida__item:hover img {
+        /*podemos poner hover y afectar al hijo*/
+        opacity: 0.6;
+        width: 100%;
+        height: 150px; }
+      .lista .lista__comida-rapida .lista__comida-rapida__item h4 {
+        font-size: 1.2rem;
+        text-align: center; }
+
+@keyframes lista {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes aparecer {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*seccion, apartado de comentarios y porcentajes de los mas consumido*/
+.seccion {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 50px 15px;
+  padding-bottom: 120px;
+  min-height: 90vh; }
+  .seccion h1 {
+    font-size: clamp(1.4rem, 1.7vw, 2rem); }
+  .seccion h2 {
+    font-size: clamp(1.1rem, 1.4vw, 2rem);
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border-bottom: solid 2px white;
+    padding-bottom: 20px; }
+  .seccion .seccion-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    justify-items: center;
+    gap: 1rem; }
+    .seccion .seccion-container .seccion__valoracion {
+      display: flex;
+      justify-content: none;
+      align-items: none;
+      gap: 30px;
+      flex-wrap: nowrap;
+      flex-direction: column; }
+      .seccion .seccion-container .seccion__valoracion .seccion__valoracion__comentarios {
+        background-color: aliceblue;
+        color: black;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        animation: comentarios 3s linear both;
+        overflow: hidden; }
+        .seccion .seccion-container .seccion__valoracion .seccion__valoracion__comentarios .seccion__valoracion__comentarios__calificacion {
+          display: flex;
+          justify-content: center;
+          align-items: none;
+          gap: 0;
+          flex-wrap: wrap;
+          flex-direction: row;
+          height: 70px; }
+          .seccion .seccion-container .seccion__valoracion .seccion__valoracion__comentarios .seccion__valoracion__comentarios__calificacion .seccion__valoracion__comentarios__calificacion__perfil {
+            max-width: 30%;
+            height: 100%;
+            object-fit: cover; }
+          .seccion .seccion-container .seccion__valoracion .seccion__valoracion__comentarios .seccion__valoracion__comentarios__calificacion .seccion__valoracion__comentarios__calificacion__estrellas {
+            max-width: 70%;
+            height: 100%; }
+        .seccion .seccion-container .seccion__valoracion .seccion__valoracion__comentarios .seccion__valoracion__comentarios__parrafo {
+          margin-top: 5px;
+          font-size: 1.2rem;
+          max-width: 400px; }
+  .seccion .seccion__porcentajes {
+    display: flex;
+    justify-content: none;
+    align-items: none;
+    gap: 3rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 80%;
+    animation: barra 1.5s linear both; }
+    .seccion .seccion__porcentajes .seccion__porcentajes__item div {
+      background-color: #610101;
+      min-height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      margin-top: 20px;
+      border-radius: 10px;
+      padding: 5x;
+      transition: background-color 0.4s linear; }
+      .seccion .seccion__porcentajes .seccion__porcentajes__item div:hover {
+        background-color: rgba(95, 0, 0, 0.725); }
+    .seccion .seccion__porcentajes .seccion__porcentajes__item h4 {
+      font-size: clamp(1.3rem, 1.7vw, 1.9rem); }
+
+@keyframes barra {
+  from {
+    width: 0%; }
+  to {
+    width: 80%; } }
+
+@keyframes comentarios {
+  from {
+    height: 0%; }
+  to {
+    height: 100%; } }
+
+/*Nosotros----------Nosotros*/
+.nosotros {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.485), rgba(0, 0, 0, 0.485)), url(../assets/imagen-fondo-nosotros.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  min-height: 90vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .nosotros .nosotros__parrafo {
+    margin: 10px 0;
+    margin-bottom: 70px; }
+    .nosotros .nosotros__parrafo h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: aparecer 1s linear both;
+      font-size: clamp(1.8rem, 2vw, 2rem); }
+    .nosotros .nosotros__parrafo p {
+      animation: aparecer 1s linear both;
+      width: 70%;
+      margin: auto;
+      font-size: clamp(1.1rem, 1.5vw, 2rem); }
+  .nosotros .nosotros__tarjetas-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 40px; }
+    .nosotros .nosotros__tarjetas-container .nosotros__tarjetas {
+      max-width: 230px;
+      min-height: 320px;
+      background-color: black;
+      padding: 20px;
+      transition: background-color 0.4s linear;
+      animation: aparecer 1s linear both; }
+      .nosotros .nosotros__tarjetas-container .nosotros__tarjetas img {
+        width: 100%;
+        height: 65%;
+        transition: opacity 0.4s linear;
+        /*no puedo poner animacion opacidad porque choca con la transicion opacidad*/ }
+      .nosotros .nosotros__tarjetas-container .nosotros__tarjetas:hover {
+        background-color: rgba(0, 0, 0, 0.722); }
+        .nosotros .nosotros__tarjetas-container .nosotros__tarjetas:hover img {
+          opacity: 0.6; }
+  .nosotros a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: black;
+    padding: 15px;
+    margin: 70px auto;
+    width: fit-content;
+    font-size: 1.2rem;
+    border: 3px solid white;
+    transition: hover 0.4s linear;
+    transition-property: background-color,font-size; }
+    .nosotros a:hover {
+      background-color: rgba(240, 248, 255, 0.325);
+      font-size: 1.5rem; }
+
+/*seccion del formulario--------*/
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  gap: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: black;
+  min-height: 90vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .formulario .formulario__contactos {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.485), rgba(0, 0, 0, 0.485)), url(../assets/hamburguesa-gigante-varias-hamburguesas_783299-2228.avif);
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 700px;
+    max-width: 750px;
+    color: white;
+    font-size: 1.5rem;
+    padding: 100px 70px;
+    display: flex;
+    justify-content: none;
+    align-items: none;
+    gap: 30px;
+    flex-wrap: nowrap;
+    flex-direction: column; }
+  .formulario .formulario__datos {
+    max-width: 550px;
+    padding: 20px;
+    color: white;
+    margin: auto;
+    /* margin al item hijo auto, afecta el centrado en flex*/
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 500px; }
+    .formulario .formulario__datos label {
+      display: block;
+      font-size: 1.2rem; }
+    .formulario .formulario__datos input {
+      display: block;
+      font-size: inherit;
+      min-height: 30px;
+      width: 100%;
+      margin-bottom: 15px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      padding: 5px;
+      transition: background-color 0.4s linear; }
+    .formulario .formulario__datos textarea {
+      max-width: 50%;
+      min-width: 70%;
+      max-height: 100px;
+      min-height: 100px;
+      font-size: 1.2rem;
+      color: inherit;
+      background-color: black;
+      border-radius: 5px;
+      padding: 5px;
+      transition: background-color 0.4s linear; }
+    .formulario .formulario__datos :is(input:hover, textarea:hover, label > select:hover) {
+      /*:is separado de la clase aplicada pseudoelemento*/
+      background-color: rgba(255, 255, 255, 0.279);
+      color: black; }
+    .formulario .formulario__datos label > select {
+      min-height: 30px;
+      color: inherit;
+      background-color: black;
+      transition: background-color 0.4s linear; }
+    .formulario .formulario__datos :is(.formulario__datos__enviar, .formulario__datos__resetear) {
+      box-shadow: 2px 2px 2px white; }
+    .formulario .formulario__datos .formulario__datos__enviar {
+      margin-top: 20px; }
+
+/*footer*/
+.footer {
+  padding: 0.3rem 2rem;
+  padding-bottom: 0.5rem;
+  background-color: #141414;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .footer .footer__politicas {
+    display: flex;
+    justify-content: none;
+    align-items: none;
+    gap: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 1rem;
+    max-width: 95%;
+    margin-left: auto; }
+    .footer .footer__politicas p {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 100px;
+      /*para nivelar varios padres flexs*/ }
+  .footer .footer__redes {
+    display: flex;
+    justify-content: space-between;
+    align-items: none;
+    gap: 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-top: .8rem; }
+    .footer .footer__redes .footer__redes-container {
+      display: flex;
+      justify-content: none;
+      align-items: none;
+      gap: 2rem;
+      flex-wrap: nowrap;
+      flex-direction: row; }
+
+/*media query del nav */
+@media screen and (max-width: 900px) {
+  /* modificando el menu desplegable */
+  .menu .menu__nav-container {
+    position: absolute;
+    left: 0;
+    top: 66px;
+    background-color: #610101;
+    translate: 0 -126%;
+    transition: menu .1s linear;
+    transition-property: translate;
+    z-index: 1; }
+    .menu .menu__nav-container .menu__nav {
+      flex-direction: column;
+      gap: 0; }
+      .menu .menu__nav-container .menu__nav li {
+        padding: 15px 10px;
+        box-shadow: 2px 0px 1px white; }
+  /* modificando propiedades cuando el checkbox este chequeado */
+  .menu .menu__desplegable:checked ~ .menu__nav-container {
+    display: flex;
+    translate: 0 0; }
+  .menu label {
+    display: flex; } }
+
+/*Modificar algunas propiedades del porcentaje,formulario*/
+@media screen and (max-width: 768px) {
+  .seccion .seccion__porcentajes {
+    align-self: center; }
+  .main > .main__presentacion h1 {
+    font-size: 2.7rem; }
+  .main > .main__presentacion p {
+    font-size: 1.2rem; }
+  .footer .footer__politicas {
+    gap: 1rem;
+    text-align: center; } }
+
+@media screen and (max-width: 612px) {
+  /*main-lista completa de comida rapida*/
+  .lista .lista__comida-rapida {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    gap: 2rem; }
+  /*main- apartado de comentarios*/
+  .seccion > .seccion-container > .seccion__valoracion > .seccion__valoracion__comentarios > .seccion__valoracion__comentarios__parrafo {
+    font-size: .9rem; }
+  /*mediaQuery para formulario*/
+  .formulario .formulario__datos {
+    min-width: 300px; }
+  .formulario .formulario__contactos {
+    min-width: 300px;
+    font-size: 1.2rem;
+    padding: 50px 70px; }
+  .menu .menu__nav-container {
+    width: 100%; }
+    .menu .menu__nav-container .menu__nav {
+      width: 100%;
+      text-align: center; }
+  .footer {
+    font-size: 0.7rem; } }

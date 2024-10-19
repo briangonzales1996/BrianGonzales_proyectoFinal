@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="icon" href="../assets/favicon-hamburger-64.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="menu">
+        <div class="menu__logo-container">
+            <img src="../assets/icons8-kawaii-french-fries-50.png" alt="papafrita logo del navegador">
+            <input type="text" placeholder="Buscador">
+        </div>
+        <!--Input de tipo checkbox creado para el menu desplegable en resposive-->
+        <input id="menu" class="menu__desplegable" type="checkbox">
+        <label for="menu" class="material-symbols-outlined">Menu</label>
+        <nav class="menu__nav-container">
+            <ul class="menu__nav">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./promociones.html">Promociones</a></li>
+                <li><a href="./lista.html">Menu</a></li>
+                <li><a href="./comentarios.html">Comentarios</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+            </ul>    
+        </nav>
+    </header>
+
+    <main class="formulario">
+        <section class="formulario__contactos">
+            <h3>Si queres ver mas contenido, completa el siguiente formulario</h3>
+            <p>Si te interesa mas de nuestros productos. Te informaremos sobre  las mejores promociones y descuentos del dia a dia </p>
+        </section>
+        <form class="formulario__datos" action="">
+            <label for="nombre">Nombre Completo</label>
+            <input id="nombre" type="text" placeholder="Juan Carlos">
+            <label for="mail">Email</label>
+            <input type="email" placeholder="ejem@gmail.com" id="mail">
+            <label for="telefono">Telefono</label>
+            <input placeholder="1120837322" type="text" id="telefono">
+            <label for="direccion">Direccion</label>
+            <input type="text" id="direccion" placeholder="Av.Argentina">
+            <label for="comentario">Comentario</label>
+            <textarea name="datos" id="comentario" placeholder="deja aqui tu comentario..."></textarea>
+            <label for="seleccion">selecciona interes
+                <select name="tipo de dato" id="seleccion">
+                    <option value="user1">Descuentos</option>
+                    <option value="user2">Empleo</option>
+                    <option value="user3">Premium</option>
+                </select>
+            </label>
+            <input class="formulario__datos__enviar" type="submit" value="ENVIAR">
+            <input  class="formulario__datos__resetear" type="reset" value="RESET">
+        </form>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__politicas">
+            <p>Politica y Privacidad</p>
+            <p>Defensa del Consumidor</p>
+            <p>Proteccion datos personales</p>
+            <p>Terminos & Condiciones</p>
+        </div>
+        <div class="footer__politicas">
+            <p>Derechos de Autor</p>
+            <p>Help</p>
+            <p>Cookies</p>
+            <p>Contactos</p>
+        </div>
+        <div class="footer__redes">
+            <div class="footer__redes-container">
+                <div class="footer__redes__item"><img src="../assets/icons8-facebook-nuevo-50.png" alt=" redes facebook"></div>
+                <div class="footer__redes__item"><img src="../assets/icons8-instagram-50.png" alt="redes instangram"></div>
+                <div class="footer__redes__item"><img src="../assets/icons8-youtube-50.png" alt="redes youtube"></div>
+            </div>
+            <div class="footer__logo">
+                <div class="footer__logo__container">
+                    <img src="../assets/icons8-kawaii-french-fries-50.png" alt="papafrita logo de pie de pagina">
+                </div>  
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

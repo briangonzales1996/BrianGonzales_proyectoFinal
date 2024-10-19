@@ -1,0 +1,95 @@
+/*seccion, apartado de comentarios y porcentajes de los mas consumido*/
+.seccion{
+    font-family: $fuente;
+    background-color: $fondo-main;
+    color: $fontColor;
+    text-align: center;
+    padding: 50px 15px;
+    padding-bottom: 120px;
+    min-height: $vh;
+    h1{
+        font-size:clamp(1.4rem,1.7vw,2rem);
+    }
+    h2{
+        font-size:clamp(1.1rem,1.4vw,2rem);
+        margin-top: 20px;
+        margin-bottom: 100px;
+        border-bottom: solid 2px $fontColor;
+        padding-bottom: 20px;
+    }
+    .seccion-container{
+        @include grid(grid,auto-fit,290px,1fr,center,1rem);
+        .seccion__valoracion{
+            @include flex(flex,none,none,30px,nowrap,column);
+            .seccion__valoracion__comentarios{
+                background-color: aliceblue;
+                color: black;
+                padding: 30px;
+                border-radius:10px;
+                max-width: 500px;
+                animation: comentarios 3s linear both;
+                overflow: hidden;
+                .seccion__valoracion__comentarios__calificacion{
+                    @include flex(flex,center,none,0,wrap,row);
+                    height: 70px;
+                    .seccion__valoracion__comentarios__calificacion__perfil{
+                        max-width: 30%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    .seccion__valoracion__comentarios__calificacion__estrellas{
+                        max-width: 70%;
+                        height: 100%;
+                    }
+                }
+                .seccion__valoracion__comentarios__parrafo{
+                    margin-top: 5px;
+                    font-size: map-get($letraTamaño,fontTamañoParrafo-lista);
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+    .seccion__porcentajes{
+        @include flex(flex,none,none,3rem,nowrap,column);
+        width: 80%;
+        animation: barra 1.5s linear both;
+        .seccion__porcentajes__item{
+            div{
+                background-color: $fondo-nav;
+                min-height: 45px;
+                @include flex(flex,center,center,0,nowrap,row);
+                margin-top: 20px;
+                border-radius: 10px;
+                padding: 5x;
+                transition: background-color $hover linear;
+                &:hover{
+                    background-color: rgba(95, 0, 0, 0.725);
+                }
+            }
+            h4{
+                font-size: clamp(1.3rem,1.7vw,1.9rem);
+            }
+        }
+    }
+
+}
+
+@keyframes barra {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 80%;
+    }
+    
+}
+
+@keyframes comentarios {
+    from{
+        height: 0%;
+    }
+    to{
+        height: 100%;
+    }
+}

@@ -1,0 +1,31 @@
+/*funciones*/
+@mixin flex($display,$justify,$align,$gap,$wrap,$direccion){
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap;
+    flex-direction: $direccion;
+    
+}
+@mixin grow($grow,$basis,$min){
+    flex-grow: $grow;
+    flex-basis: $basis;
+    min-width:$min;
+}
+@mixin grid($grid,$repeat,$min,$max,$justify,$gap){
+    display: grid;
+    grid-template-columns: repeat($repeat,minmax($min,$max));
+    justify-items: $justify;
+    gap: $gap;
+}
+@mixin imagenFondo($background,$size,$posicion){
+    background-image: $background;
+    background-size: $size;
+    background-position: $posicion;
+}
+@mixin animationScroll($timeLine,$rangeStart,$rangeEnd){
+    animation-timeline: $timeLine;
+    animation-range-start:$rangeStart;
+    animation-range-end:$rangeEnd;
+}

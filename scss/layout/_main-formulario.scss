@@ -1,0 +1,67 @@
+/*seccion del formulario--------*/
+.formulario{
+    @include flex(flex,center,none,0,wrap,row);
+    background-color: $fondo-main;
+    min-height: $vh;
+    font-family: $fuente;
+    .formulario__contactos{
+        @include imagenFondo((linear-gradient($fondoGradiente,$fondoGradiente),url(../assets/hamburguesa-gigante-varias-hamburguesas_783299-2228.avif)),cover,center);
+        @include grow(1,0,700px);
+        max-width: 750px;
+        color: $fontColor;
+        font-size: map-get($letraTamaño,fontTamañoParrafo);
+        padding: 100px 70px;
+        @include flex(flex,none,none,30px,nowrap,column);
+    }
+    .formulario__datos{
+        max-width: 550px;
+        padding: 20px;
+        color: $fontColor;
+        margin: auto;/* margin al item hijo auto, afecta el centrado en flex*/
+        @include grow(1,0,500px);
+        label{
+            display: block;
+            font-size:map-get($letraTamaño,fontTamañoParrafo-lista);
+        }
+        input{
+            display: block;
+            font-size: inherit;
+            min-height: 30px;
+            width: 100%;
+            margin-bottom: 15px;
+            background-color: $fondo-main;
+            color: $fontColor;
+            border-radius: 5px;
+            padding: 5px;
+            transition: background-color $hover linear;
+        }
+        textarea{
+            max-width: 50%;
+            min-width: 70%;
+            max-height: 100px;
+            min-height: 100px;
+            font-size:map-get($letraTamaño,fontTamañoParrafo-lista);
+            color: inherit;
+            background-color: $fondo-main;
+            border-radius: 5px;
+            padding: 5px;
+            transition: background-color $hover linear;
+        }
+        & :is(input:hover,textarea:hover,label>select:hover){ /*:is separado de la clase aplicada pseudoelemento*/
+            background-color: rgba(255, 255, 255, 0.279);
+            color: $fondo-main;
+        }
+        label>select{
+            min-height: 30px;
+            color: inherit;
+            background-color: $fondo-main;
+            transition: background-color $hover linear;
+        }
+        & :is(.formulario__datos__enviar,.formulario__datos__resetear){
+            box-shadow: 2px 2px 2px $fontColor;
+        }
+        .formulario__datos__enviar{
+            margin-top: 20px;
+        }
+    }
+}

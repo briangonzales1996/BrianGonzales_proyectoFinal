@@ -1,0 +1,65 @@
+/*Seccion de lista de menus disponibles*/
+.lista{
+    background-color: $fondo-main;
+    @include flex(flex,center,none,3rem,nowrap,column);
+    padding: 2rem 0;
+    color: $fontColor;
+    min-height: $vh;
+    font-family: $fuente;
+    animation: aparecer 1s -.7s linear both;
+    h1{
+        text-align: center;
+        font-size:map-get($letraTamaño,fontTamaño-titulos);
+        border-bottom: 2px solid $fontColor;
+        padding-bottom: 30px;
+    }
+    .lista__comida-rapida{
+        @include grid(grid,auto-fit,150px,1fr,center,2rem);
+        .lista__comida-rapida__item{
+            max-width: 100%;
+            width: 200px;
+            min-height: 200px;
+            animation: lista linear both;
+            @include animationScroll(view(),cover -10%,cover 30%);
+            transition: border .3s linear;
+            &:hover{
+                border: 2px solid rgb(255, 255, 255);
+                color: $fontColor;
+            }
+            img{
+                width: 97%;
+                height: 140px;
+                transition: imagen .3s linear;
+                transition-property:width,opacity,height;
+                
+            }
+            &:hover img{ /*podemos poner hover y afectar al hijo*/
+                opacity: 0.6;
+                width: 100%;
+                height: 150px;
+                
+            }
+            h4{
+                font-size: map-get($letraTamaño,fontTamañoParrafo-lista);
+                text-align: center;
+            }
+        }
+    }
+}
+
+@keyframes lista {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

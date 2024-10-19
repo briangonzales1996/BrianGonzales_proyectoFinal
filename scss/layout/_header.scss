@@ -1,0 +1,84 @@
+/*header---------------header*/
+.menu{
+    @include flex(flex,space-between,center,10px,nowrap,row);
+    background-color: $fondo-nav;
+    padding: 0.5rem 2rem;
+    font-family: $fuente;
+    /*menu que contiene al buscador y logo*/
+    .menu__logo-container{
+        @include flex(flex,none,center,0.5rem,wrap,row);
+        flex-grow:1 ;
+        flex-basis: 0;/*ojo:si aplico grow al los elemntos, el flex padre no funciona el justify,pero los hijos de ese elemento si puedo aplicar justife y aling*/
+        min-width: 100px;
+        img{
+            width: 50px;
+            transition: logo $hover linear;
+            transition-property: width;
+            animation: logo 3s linear both infinite;
+            border-radius:5px;
+        }
+        img:hover{
+            width: 55px;
+        }
+        input{
+            max-width: 200px;
+            min-height: 25px;
+            font-size: map-get($letraTamaño,fontTamañoMenu);
+            background-color: $fondo-main;
+            color: $fontColor;
+            flex-grow: 1;
+            flex-basis: 0;
+            min-width: 100px;
+            transition: buscador $hover linear;/*primero va el nombre de la transicion*/
+            transition-property: background-color;
+            &:hover{
+                background-color: rgb(255, 255, 255);
+                color: $fondo-main;
+            }
+        }
+    }
+    .menu__nav-container{
+        /*menu: apartado que contiene al navegador*/    
+        ul{
+            @include flex(flex,none,none,2rem,wrap,row);
+            list-style: none;
+            font-size: map-get($letraTamaño,fontTamañoMenu);
+            font-weight:$fontWeight;
+            color: $fontColor;
+            li{
+                font-size: inherit;
+                padding: 8px;
+                transition: nav $hover linear;
+                transition-property: background-color;
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.507);
+                }
+                a{
+                    color: inherit;
+                    text-decoration: none;
+                    font-size: inherit;
+                    padding: 5px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    
+    .menu__desplegable{
+        /* input de tipo checkbox para mi menu desplegable en responsive*/
+        display: none;
+    }
+    label{
+        display: none;
+        font-size: 2rem;
+    }
+    
+}
+@keyframes logo {
+    from{
+        background-color: $fondo-nav;
+    }
+    to{
+        background-color: $fontColor;
+    }
+}

@@ -1,0 +1,30 @@
+/*main titulo y fondo de la pagina */
+.main{
+    @include imagenFondo(url(../assets/Comer-hamburguesa-puede-ser-saludable.webp),cover,none);
+    font-family: $fuente;
+    .main__presentacion{
+        min-height: $vh;
+        background: linear-gradient(to left,transparent,black);
+        color: $fontColor;
+        @include flex(flex,center,none,1rem,wrap,column);
+        padding-left: 30px;
+        animation: aparecer 1s linear both;
+        h1{
+            font-size: 3.2rem;
+        }
+        p{
+            font-size: map-get($letraTamaño,fontTamañoParrafo);
+            max-width: 650px;
+            width: 90%;
+        }
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

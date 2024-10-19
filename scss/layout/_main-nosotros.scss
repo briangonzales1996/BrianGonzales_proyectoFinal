@@ -1,0 +1,67 @@
+/*Nosotros----------Nosotros*/
+.nosotros{
+    @include imagenFondo((linear-gradient($fondoGradiente,$fondoGradiente),url(../assets/imagen-fondo-nosotros.jpg)),cover,center);
+    color: $fontColor;
+    padding: 20px;
+    min-height: $vh;
+    font-family: $fuente;
+    .nosotros__parrafo{
+        margin: 10px 0;
+        margin-bottom: 70px;
+        
+        h1{
+            
+            text-align: center;
+            margin-bottom: 20px;
+            animation: aparecer 1s linear both;
+            font-size:clamp(1.8rem,2vw,2rem); 
+        }
+        p{
+            animation: aparecer 1s linear both;
+            width: 70%;
+            margin: auto;
+            font-size:clamp(1.1rem,1.5vw,2rem);  
+        }
+    }
+    .nosotros__tarjetas-container{
+        @include flex(flex,space-around,none,10px,wrap,row);
+        margin-top: 40px;
+        .nosotros__tarjetas{
+            max-width: 230px;
+            min-height: 320px;
+            background-color: $fondo-main;
+            padding: 20px;
+            transition: background-color $hover linear;
+            animation: aparecer 1s linear both;
+            img{
+                width: 100%;
+                height: 65%;
+                transition: opacity $hover linear; /*no puedo poner animacion opacidad porque choca con la transicion opacidad*/
+            }
+            &:hover{ //podemos modificar al hijo cuando algo esta en hover
+                background-color:rgba(0, 0, 0, 0.722);
+                img{
+                    opacity: 0.6;
+                }
+            }
+            
+        }
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        background-color: $fondo-main;
+        padding: 15px;
+        margin: 70px auto;
+        width: fit-content;
+        font-size:map-get($letraTamaño,fontTamañoParrafo-lista);
+        border: 3px solid $fontColor;
+        transition: hover $hover linear;
+        transition-property: background-color,font-size;
+        &:hover{
+            background-color: rgba(240, 248, 255, 0.325);
+            font-size:map-get($letraTamaño,fontTamañoParrafo);
+        }
+    }
+}
