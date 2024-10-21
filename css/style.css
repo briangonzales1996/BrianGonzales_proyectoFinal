@@ -116,6 +116,10 @@
       max-width: 650px;
       width: 90%; }
 
+strong {
+  font-weight: 900;
+  color: #ec4e4e; }
+
 @keyframes aparecer {
   from {
     opacity: 0; }
