@@ -145,7 +145,7 @@ strong {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
   .producto-container .producto-fondo-superior {
     height: 180px;
-    background-image: url(../../assets/fondo.jpg);
+    background-image: url(../assets/fondo.jpg);
     background-position: center; }
   .producto-container h1 {
     margin-top: 3rem;
@@ -268,7 +268,7 @@ strong {
   border-bottom: solid 2px white; }
   .lista .lista-fondo-superior {
     height: 180px;
-    background-image: url(../../assets/fondo.jpg);
+    background-image: url(../assets/fondo.jpg);
     background-position: center; }
   .lista h1 {
     margin: auto;
