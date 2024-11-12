@@ -1,16 +1,19 @@
 /*footer*/
 .footer{
-    padding: 0.3rem 2rem;
+    
+    padding: 0.3rem 2rem ;
     padding-bottom: 0.5rem;
-    background-color: rgb(20, 20, 20);
+    background-color: $fondo-main;
     color: $fontColor;
     font-family: $fuente;
     .footer__politicas{
         @include flex(flex,none,none,0,wrap,row);
-        margin-top: 1rem;
+        margin-top: 1rem ;
         max-width: 95%;
         margin-left: auto;
-        p{
+        p{  
+            margin: 0;
+            padding: 0;
             @include grow(1,0,100px);/*para nivelar varios padres flexs*/
         }
     }

@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+body {
+  background-color: black; }
+
 /*header---------------header*/
 .menu {
   display: flex;
@@ -55,6 +58,8 @@
   .menu .menu__nav-container {
     /*menu: apartado que contiene al navegador*/ }
     .menu .menu__nav-container ul {
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: none;
       align-items: none;
@@ -89,7 +94,7 @@
   from {
     background-color: #610101; }
   to {
-    background-color: white; } }
+    background-color: black; } }
 
 /*main titulo y fondo de la pagina */
 .main {
@@ -129,8 +134,7 @@ strong {
 /*main promociones seccion de productos recomendados------*/
 .producto-container {
   background-color: black;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  /*padding-top:3rem;*/
   display: flex;
   justify-content: none;
   align-items: none;
@@ -139,7 +143,12 @@ strong {
   flex-direction: column;
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  .producto-container .producto-fondo-superior {
+    height: 180px;
+    background-image: url(../../assets/fondo.jpg);
+    background-position: center; }
   .producto-container h1 {
+    margin-top: 3rem;
     text-align: center;
     font-size: 1.7rem;
     overflow: hidden;
@@ -216,6 +225,26 @@ strong {
           height: 100%;
           object-fit: cover; }
 
+/*aplique bootstraps para esta seccion del html*/
+.aside {
+  background-color: black;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  border-bottom: solid 2px white; }
+  .aside .carousel {
+    margin: auto;
+    max-width: 800px;
+    overflow-y: hidden; }
+    .aside .carousel .carousel-inner .carousel-item {
+      width: 100%;
+      min-width: 200px;
+      height: 300px; }
+      .aside .carousel .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center; }
+
 @keyframes letras {
   from {
     opacity: 0; }
@@ -228,29 +257,48 @@ strong {
   display: flex;
   justify-content: center;
   align-items: none;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: nowrap;
   flex-direction: column;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   color: white;
   min-height: 90vh;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  animation: aparecer 1s -.7s linear both; }
+  animation: aparecer 1s -.7s linear both;
+  border-bottom: solid 2px white; }
+  .lista .lista-fondo-superior {
+    height: 180px;
+    background-image: url(../../assets/fondo.jpg);
+    background-position: center; }
   .lista h1 {
-    text-align: center;
+    margin: auto;
     font-size: 1.7rem;
-    border-bottom: 2px solid white;
-    padding-bottom: 30px; }
+    margin-bottom: 1rem; }
+  .lista .lista__borde {
+    border-bottom: solid 5px white;
+    width: 200px;
+    margin: auto; }
+  .lista h2 {
+    margin: auto;
+    text-align: center; }
   .lista .lista__comida-rapida {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-items: center;
-    gap: 2rem; }
+    gap: 2rem;
+    width: 80vw;
+    margin: auto; }
     .lista .lista__comida-rapida .lista__comida-rapida__item {
       max-width: 100%;
       width: 200px;
       min-height: 200px;
       animation: lista linear both;
+      display: flex;
+      justify-content: none;
+      align-items: center;
+      gap: none;
+      flex-wrap: nowrap;
+      flex-direction: column;
       animation-timeline: view();
       animation-range-start: cover -10%;
       animation-range-end: cover 30%;
@@ -270,7 +318,8 @@ strong {
         height: 150px; }
       .lista .lista__comida-rapida .lista__comida-rapida__item h4 {
         font-size: 1.2rem;
-        text-align: center; }
+        text-align: center;
+        margin-top: 7px; }
 
 @keyframes lista {
   from {
@@ -292,14 +341,14 @@ strong {
   text-align: center;
   padding: 50px 15px;
   padding-bottom: 120px;
-  min-height: 90vh; }
+  min-height: 90vh;
+  border-bottom: solid 2px white; }
   .seccion h1 {
     font-size: clamp(1.4rem, 1.7vw, 2rem); }
   .seccion h2 {
     font-size: clamp(1.1rem, 1.4vw, 2rem);
     margin-top: 20px;
     margin-bottom: 100px;
-    border-bottom: solid 2px white;
     padding-bottom: 20px; }
   .seccion .seccion-container {
     display: grid;
@@ -521,7 +570,7 @@ strong {
 .footer {
   padding: 0.3rem 2rem;
   padding-bottom: 0.5rem;
-  background-color: #141414;
+  background-color: black;
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
   .footer .footer__politicas {
@@ -535,6 +584,8 @@ strong {
     max-width: 95%;
     margin-left: auto; }
     .footer .footer__politicas p {
+      margin: 0;
+      padding: 0;
       flex-grow: 1;
       flex-basis: 0;
       min-width: 100px;

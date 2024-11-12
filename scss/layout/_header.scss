@@ -40,6 +40,8 @@
     .menu__nav-container{
         /*menu: apartado que contiene al navegador*/    
         ul{
+            padding: 0;
+            margin: 0;
             @include flex(flex,none,none,2rem,wrap,row);
             list-style: none;
             font-size: map-get($letraTamaño,fontTamañoMenu);
@@ -79,6 +81,6 @@
         background-color: $fondo-nav;
     }
     to{
-        background-color: $fontColor;
+        background-color: $fondo-main;
     }
 }

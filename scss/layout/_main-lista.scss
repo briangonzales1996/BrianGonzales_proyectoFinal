@@ -1,25 +1,43 @@
 /*Seccion de lista de menus disponibles*/
 .lista{
     background-color: $fondo-main;
-    @include flex(flex,center,none,3rem,nowrap,column);
-    padding: 2rem 0;
+    @include flex(flex,center,none,2rem,nowrap,column);
+    padding-bottom: 2rem;
     color: $fontColor;
     min-height: $vh;
     font-family: $fuente;
     animation: aparecer 1s -.7s linear both;
+    border-bottom: solid 2px $fontColor;
+    .lista-fondo-superior{
+        height: 180px;
+        background-image: url(../../assets/fondo.jpg);
+        background-position: center;
+    }
     h1{
-        text-align: center;
+        margin: auto;
         font-size:map-get($letraTamaño,fontTamaño-titulos);
-        border-bottom: 2px solid $fontColor;
-        padding-bottom: 30px;
+        margin-bottom: 1rem;
+    }
+    .lista__borde{
+        
+        border-bottom: solid 5px $fontColor;
+        width: 200px;
+        margin: auto;
+    }
+    h2{
+        margin: auto;
+        text-align: center
     }
     .lista__comida-rapida{
         @include grid(grid,auto-fit,150px,1fr,center,2rem);
+        width: 80vw;
+        margin: auto;
         .lista__comida-rapida__item{
             max-width: 100%;
             width: 200px;
             min-height: 200px;
             animation: lista linear both;
+            @include flex(flex,none,center,none,nowrap,column);
             @include animationScroll(view(),cover -10%,cover 30%);
             transition: border .3s linear;
             &:hover{
@@ -31,7 +49,6 @@
                 height: 140px;
                 transition: imagen .3s linear;
                 transition-property:width,opacity,height;
-                
             }
             &:hover img{ /*podemos poner hover y afectar al hijo*/
                 opacity: 0.6;
@@ -42,6 +59,7 @@
             h4{
                 font-size: map-get($letraTamaño,fontTamañoParrafo-lista);
                 text-align: center;
+                margin-top: 7px;
             }
         }
     }
