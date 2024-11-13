@@ -230,10 +230,17 @@ strong {
   background-color: black;
   padding-bottom: 30px;
   margin-top: 30px;
-  border-bottom: solid 2px white; }
+  border-bottom: solid 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center; }
   .aside .carousel {
     margin: auto;
-    max-width: 800px;
+    width: 500px;
     overflow-y: hidden; }
     .aside .carousel .carousel-inner .carousel-item {
       width: 100%;

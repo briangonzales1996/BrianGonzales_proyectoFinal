@@ -92,9 +92,11 @@
     padding-bottom: 30px;
     margin-top: 30px;    
     border-bottom: solid 2px $fontColor;
+    @include flex(flex,center,none,1rem,wrap,row);
+    text-align: center;
     .carousel{
         margin: auto; 
-        max-width: 800px;
+        width: 500px;
         overflow-y: hidden;
         .carousel-inner{
             .carousel-item{ //siempre establcer los limites para aplicar los object fir en imagenes
